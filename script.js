@@ -7,6 +7,7 @@ const state = {
     city: "",
     zipCode: 0,
     petName: "",
+    petSpecies: "",
 };
 
 console.log(state);
@@ -18,6 +19,9 @@ let phoneInput = document.getElementById("phone");
 let cityInput = document.getElementById("city");
 let zipCodeInput = document.getElementById("zipCode");
 let petInput = document.getElementById("petName");
+let petSpeciesInput = document.getElementById("petSpecies");
+
+const petOwnerArray = [];
 
 function saveForm() {
     console.log("Button Pressed!")
@@ -30,8 +34,12 @@ function saveForm() {
     state.city = cityInput.value;
     state.zipCode = zipCodeInput.value;
     state.petName = petInput.value;
+    state.petSpecies = petSpeciesInput.value;
+
+    petOwnerArray.push(createPetOwner(state.name, state.petName, state.petSpecies));
 
     console.log(state);
+    console.log(petOwnerArray);
     // optionally reset this
     nameInput.value = "";
     emailInput.value = "";
@@ -39,6 +47,8 @@ function saveForm() {
     cityInput.value = "";
     zipCodeInput.value = "";
     petInput.value = "";
+    petSpeciesInput.value = "";
+    petOwnerArray[0].render();
 };
 
 saveFormButton.addEventListener("click", saveForm)
