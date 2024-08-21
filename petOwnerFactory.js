@@ -9,9 +9,9 @@ function createPetOwner(petOwnerName, petName, petType) {
         },
         render: function() {
             console.log("Factory Button Pressed");
-            nameInput.textContent = petOwnerName;
-            petInput.textContent = petName;
-            petSpeciesInput.textContent = petType;
+            nameInput.textContent = this.petOwnerName;
+            petInput.textContent = this.petName;
+            petSpeciesInput.textContent = this.petType;
         },
     }
     return petOwner
