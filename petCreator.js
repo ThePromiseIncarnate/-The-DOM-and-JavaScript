@@ -19,6 +19,15 @@ function createPet(inputName, inputAge, inputSpecies) {
         status: function () {
             console.log(`Pet Name: ${this.name}, Age: ${this.age}, Species: ${this.species}, Happiness: ${this.happiness}, Energy: ${this.energy}`)
         },
+        html: function () {
+            return `<div>
+                <h3>${this.name}</h3>
+                <p>Species: ${this.species}</p>
+                <p>Age: ${this.age}</p>
+                <p>Energy: ${this.energy}</p>
+                <p>Happiness: ${this.happiness}</p>
+            </div>`
+        },
     }
     return pet
 }
