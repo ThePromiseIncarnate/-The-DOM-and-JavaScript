@@ -1,14 +1,18 @@
 console.log("Hello World");
 
-const state = {
-    name: "",
-    email: "",
-    phone: "",
-    city: "",
-    zipCode: 0,
-    petName: "",
-    petSpecies: "",
-};
+state.name = localStorage.getItem("name") || "";
+state.email = localStorage.getItem("email") || "";
+state.zipcode = localStorage.getItem("zipcode") || "";
+
+// const state = {
+//     name: "",
+//     email: "",
+//     phone: "",
+//     city: "",
+//     zipCode: 0,
+//     petName: "",
+//     petSpecies: "",
+// };
 
 console.log(state);
 
@@ -40,6 +44,9 @@ function saveForm() {
 
     console.log(state);
     console.log(petOwnerArray);
+    localStorage.setItem("name", state.name);
+    localStorage.setItem("email", state.email);
+    localStorage.setItem("zipcode", state.zipCode);
     // optionally reset this
     nameInput.value = "";
     emailInput.value = "";

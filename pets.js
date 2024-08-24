@@ -2,10 +2,6 @@ console.log("Hello from pets.js!");
 
 let petsHTML = ""
 
-const state = {
-    pets: [],
-}
-
 let savePetButton = document.getElementById("petButton");
 let petsNameInput = document.getElementById("petsName");
 let petsAgeInput = document.getElementById("petsAge");
