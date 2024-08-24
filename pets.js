@@ -3,13 +3,13 @@ console.log("Hello from pets.js!");
 const state = {
     pets: [],
     html: function () {
-        <div>
-            <h3>Pet Name</h3>
-            <p>Species: species</p>
-            <p>Age: age</p>
-            <p>Energy: energy</p>
-            <p>Happiness: happiness</p>
-        </div>
+        return `<div>
+            <h3>${this.name}</h3>
+            <p>Species: ${this.species}</p>
+            <p>Age: ${this.age}</p>
+            <p>Energy: ${this.energy}</p>
+            <p>Happiness: ${this.happiness}</p>
+        </div>`
     },
 }
 
@@ -25,5 +25,8 @@ function savePet() {
     state.pets.push(createPet(petsNameInput.value, petsAgeInput.value, petsSpeciesInput.value));
     console.table(state.pets);
 }
+
+state.pets.push(createPet("Jules", 1, "Cat"));
+console.log(state.html());
 
 savePetButton.addEventListener("click", savePet);
